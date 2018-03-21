@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script src="jquery-3.1.1.min.js"></script>
+		
+		用户名：<input type="text" id="user"/>
+		
+		密码：<input type="password" id="pass"/>
+		
+		确认密码：<input type="password" id="pass2"/>
+		
+		<button id="sub">登录</button>
+		
+		<script>
+		      $(function(){
+		      	
+		      	 $("#sub").click(function(){
+		      	 	
+		      	 	var name=$("#user").val();
+		      	 	var pass=$("#pass").val();
+		      	 	var pass2=$("#pass2").val();
+		      	 	
+		      	 	$.post("http://127.0.0.1:8085/login",{name:name,mima:pass,mima2:pass2},function(data,sta){
+		      	 		    if(data){
+		      	 		    	alert(data)
+		      	 		    }
+		      	 	})
+		      	 	
+		      	 	
+		      	 	
+		      	 	
+		      	 })
+		      	
+		      	
+		      	
+		      })
+		</script>
+	</body>
+</html>
